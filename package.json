@@ -1,0 +1,50 @@
+{
+  "name": "wordchecker_de",
+  "version": "1.0.0",
+  "description": "Application will help to check words with Wiktionary DE",
+  "main": "index.tsx",
+  "scripts": {
+    "start": "webpack-dev-server --env.NODE_ENV=development",
+    "build": "webpack --env.NODE_ENV=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BinaryCry/wordchecker_de.git"
+  },
+  "keywords": [
+    "pwa",
+    "react",
+    "typescript",
+    "dictionary"
+  ],
+  "author": "Oleksandr Stepanenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BinaryCry/wordchecker_de/issues"
+  },
+  "homepage": "https://github.com/BinaryCry/wordchecker_de#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "source-map-loader": "^0.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.2.0",
+    "style-loader": "^1.0.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
