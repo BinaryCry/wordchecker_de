@@ -1,17 +1,39 @@
 import * as React from "react";
 import * as style from "./index.scss";
+import { IState } from "./interface";
+import axios from "axios";
 
 const LiveInput = () => {
-  const initialState = {
-    input: ""
+  const wiki = "https://de.wiktionary.org/w/api.php";
+
+  const initialState: IState = {
+    input: "",
+    wikiOpenSearchResult: []
   };
 
   const [state, setState] = React.useState(initialState);
 
+  const getOpenSearchResult = (searchString: string) => {
+    console.log(searchString);
+    if (searchString.length !== 0) {
+      axios
+        .get(wiki, {
+          params: {
+            action: "opensearch",
+            search: searchString
+          }
+        })
+        .then(result => {
+          console.log(result);
+        });
+    }
+  };
+
   const handleChange = (syntEvent: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(syntEvent.target.value);
     syntEvent.persist();
     setState(prevState => ({ ...prevState, input: syntEvent.target.value }));
-    console.log(state.input)
+    // getOpenSearchResult(syntEvent.target.value);
   };
 
   return (
@@ -23,6 +45,7 @@ const LiveInput = () => {
         className={style.liveInput}
         type="text"
       />
+      <p>{state.input}</p>
     </div>
   );
 };

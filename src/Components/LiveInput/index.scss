@@ -1,7 +1,11 @@
 .liveInputWrapper {
-  
+  display: flex;
+  flex-direction: column;
 }
 
 .liveInput {
-  
+  line-height: 1.5em;
+  border-radius: 2px;
+  display: inline-block;
+  width: 200px;
 }
